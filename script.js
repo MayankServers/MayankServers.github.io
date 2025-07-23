@@ -15,6 +15,7 @@ if (hamburger && navMenu) {
     if (isMenuOpen) {
       // Open menu
       navMenu.classList.add('mobile-menu');
+      navMenu.style.display = 'flex';
       setTimeout(() => {
         navMenu.classList.add('active');
       }, 10);
@@ -29,6 +30,7 @@ if (hamburger && navMenu) {
       
       setTimeout(() => {
         navMenu.classList.remove('mobile-menu');
+        navMenu.style.display = '';
       }, 400);
       
       // Remove swipe listeners
