@@ -4,112 +4,129 @@ const navMenu = document.querySelector('.nav-menu');
 const body = document.body;
 let isMenuOpen = false;
 
-// Enhanced mobile menu toggle with animations
-function toggleMobileMenu() {
-  isMenuOpen = !isMenuOpen;
-  
-  hamburger.classList.toggle('active', isMenuOpen);
-  
-  if (isMenuOpen) {
-    // Open menu
-    navMenu.classList.add('mobile-menu');
-    setTimeout(() => {
-      navMenu.classList.add('active');
-    }, 10);
-    body.classList.add('menu-open');
+// Check if elements exist before adding event listeners
+if (hamburger && navMenu) {
+  // Enhanced mobile menu toggle with animations
+  function toggleMobileMenu() {
+    isMenuOpen = !isMenuOpen;
     
-    // Add swipe to close functionality
-    addSwipeToClose();
-  } else {
-    // Close menu
-    navMenu.classList.remove('active');
-    body.classList.remove('menu-open');
+    hamburger.classList.toggle('active', isMenuOpen);
     
-    setTimeout(() => {
-      navMenu.classList.remove('mobile-menu');
-    }, 400);
-    
-    // Remove swipe listeners
-    removeSwipeToClose();
+    if (isMenuOpen) {
+      // Open menu
+      navMenu.classList.add('mobile-menu');
+      setTimeout(() => {
+        navMenu.classList.add('active');
+      }, 10);
+      body.classList.add('menu-open');
+      
+      // Add swipe to close functionality
+      addSwipeToClose();
+    } else {
+      // Close menu
+      navMenu.classList.remove('active');
+      body.classList.remove('menu-open');
+      
+      setTimeout(() => {
+        navMenu.classList.remove('mobile-menu');
+      }, 400);
+      
+      // Remove swipe listeners
+      removeSwipeToClose();
+    }
   }
-}
 
-hamburger.addEventListener('click', toggleMobileMenu);
+  hamburger.addEventListener('click', toggleMobileMenu);
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-  if (isMenuOpen) {
-    toggleMobileMenu();
-  }
-}));
-
-// Enhanced click outside to close
-document.addEventListener('click', (e) => {
-  if (isMenuOpen && !hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-    toggleMobileMenu();
-  }
-});
-
-// Prevent menu close when clicking inside menu
-navMenu.addEventListener('click', (e) => {
-  e.stopPropagation();
-});
-
-// Swipe to close functionality
-let touchStartY = 0;
-let touchEndY = 0;
-let swipeListenersAdded = false;
-
-function handleTouchStart(e) {
-  touchStartY = e.changedTouches[0].screenY;
-}
-
-function handleTouchEnd(e) {
-  touchEndY = e.changedTouches[0].screenY;
-  handleSwipeGesture();
-}
-
-function handleSwipeGesture() {
-  const swipeThreshold = 50;
-  const swipeDistance = touchStartY - touchEndY;
-  
-  // Swipe up to close menu
-  if (swipeDistance > swipeThreshold && isMenuOpen) {
-    toggleMobileMenu();
-  }
-}
-
-function addSwipeToClose() {
-  if (!swipeListenersAdded) {
-    navMenu.addEventListener('touchstart', handleTouchStart, { passive: true });
-    navMenu.addEventListener('touchend', handleTouchEnd, { passive: true });
-    swipeListenersAdded = true;
-  }
-}
-
-function removeSwipeToClose() {
-  if (swipeListenersAdded) {
-    navMenu.removeEventListener('touchstart', handleTouchStart);
-    navMenu.removeEventListener('touchend', handleTouchEnd);
-    swipeListenersAdded = false;
-  }
-}
-
-// Close menu on orientation change
-window.addEventListener('orientationchange', () => {
-  if (isMenuOpen) {
-    setTimeout(() => {
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+    if (isMenuOpen) {
       toggleMobileMenu();
-    }, 100);
+    }
+  }));
+
+  // Enhanced click outside to close
+  document.addEventListener('click', (e) => {
+    if (isMenuOpen && !hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+      toggleMobileMenu();
+    }
+  });
+
+  // Prevent menu close when clicking inside menu
+  navMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  // Swipe to close functionality
+  let touchStartY = 0;
+  let touchEndY = 0;
+  let swipeListenersAdded = false;
+
+  function handleTouchStart(e) {
+    touchStartY = e.changedTouches[0].screenY;
+  }
+
+  function handleTouchEnd(e) {
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipeGesture();
+  }
+
+  function handleSwipeGesture() {
+    const swipeThreshold = 50;
+    const swipeDistance = touchStartY - touchEndY;
+    
+    // Swipe up to close menu
+    if (swipeDistance > swipeThreshold && isMenuOpen) {
+      toggleMobileMenu();
+    }
+  }
+
+  function addSwipeToClose() {
+    if (!swipeListenersAdded) {
+      navMenu.addEventListener('touchstart', handleTouchStart, { passive: true });
+      navMenu.addEventListener('touchend', handleTouchEnd, { passive: true });
+      swipeListenersAdded = true;
+    }
+  }
+
+  function removeSwipeToClose() {
+    if (swipeListenersAdded) {
+      navMenu.removeEventListener('touchstart', handleTouchStart);
+      navMenu.removeEventListener('touchend', handleTouchEnd);
+      swipeListenersAdded = false;
+    }
+  }
+
+  // Close menu on orientation change
+  window.addEventListener('orientationchange', () => {
+    if (isMenuOpen) {
+      setTimeout(() => {
+        toggleMobileMenu();
+      }, 100);
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMenuOpen) {
+      toggleMobileMenu();
+    }
+  });
+} else {
+  console.warn('Navbar elements not found. Make sure .hamburger and .nav-menu exist in the DOM.');
+}
+
+// Initialize navbar functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  if (!hamburger || !navMenu) {
+    console.error('Required navbar elements not found');
+    return;
   }
 });
 
-// Close menu on escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && isMenuOpen) {
-    toggleMobileMenu();
-  }
-});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
