@@ -1,81 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayank's Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script defer data-domain="mayank.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mayank Baswal - Full Stack Developer</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="shortcut icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="bg-dark text-white text-center py-5">
-        <h1>Mayank's Portfolio</h1>
-    </header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <div class="container">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">Mayank Baswal</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#interests" class="nav-link">Interests</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Mayank Baswal</span>
+        </h1>
+        <p class="hero-subtitle">Full Stack Developer</p>
+        <p class="hero-description">
+          Passionate about creating innovative web solutions with modern technologies.
+          Specialized in Python, JavaScript, and building scalable applications.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="floating-card">
+          <div class="code-snippet">
+            <div class="code-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
             </div>
-        </div>
-    </nav>
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">About Me</h2>
-            <p class="text-center">Welcome to my portfolio website! I am Mayank, a passionate web developer based in [Your City, Country]. I love creating beautiful and functional websites.</p>
-        </div>
-    </section>
-    <section id="portfolio" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Portfolio</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h3 class="card-title">Project 1</h3>
-                            <p class="card-text">Description of project 1.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h3 class="card-title">Project 2</h3>
-                            <p class="card-text">Description of project 2.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="code-content">
+              <p><span class="keyword">const</span> <span class="variable">developer</span> = {</p>
+              <p>&nbsp;&nbsp;name: <span class="string">"Mayank Baswal"</span>,</p>
+              <p>&nbsp;&nbsp;skills: [<span class="string">"Python"</span>, <span class="string">"JavaScript"</span>],</p>
+              <p>&nbsp;&nbsp;passion: <span class="string">"Building amazing apps"</span></p>
+              <p>};</p>
             </div>
+          </div>
         </div>
-    </section>
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Contact Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <ul class="list-unstyled">
-                        <li>Email: mayank@example.com</li>
-                        <li>Phone: +1234567890</li>
-                    </ul>
-                </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I'm a passionate full-stack developer with expertise in modern web technologies. 
+            I love creating innovative solutions and have experience building various web applications 
+            and hosting services. My journey in development has led me to work on multiple projects 
+            ranging from hosting platforms to domain registry services.
+          </p>
+          <p>
+            When I'm not coding, you'll find me exploring the latest anime series or diving deep into 
+            new programming frameworks. I believe in continuous learning and staying updated with 
+            the latest industry trends.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <h3>5+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat-item">
+            <h3>50+</h3>
+            <p>Anime Watched</p>
+          </div>
+          <div class="stat-item">
+            <h3>1</h3>
+            <p>Active Project</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">🐍</div>
+          <h3>Python</h3>
+          <p>Backend development, automation, and data processing</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h3>JavaScript</h3>
+          <p>Frontend development, React, Node.js, and modern frameworks</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🎨</div>
+          <h3>HTML & CSS</h3>
+          <p>Responsive design, modern layouts, and user interfaces</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔧</div>
+          <h3>Full Stack</h3>
+          <p>End-to-end application development and deployment</p>
+        </div>
+      </div>
+      
+      <!-- GitHub Stats -->
+      <div class="github-stats">
+        <h3 class="stats-title">GitHub Activity</h3>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <img src="https://github-readme-stats.vercel.app/api?username=LightHostingFree&theme=dark&hide_border=true&include_all_commits=true&count_private=true&bg_color=1e293b&title_color=8b5cf6&text_color=e2e8f0&icon_color=3b82f6" alt="GitHub Stats" loading="lazy">
+          </div>
+          <div class="stat-card">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LightHostingFree&theme=dark&hide_border=true&layout=compact&bg_color=1e293b&title_color=8b5cf6&text_color=e2e8f0" alt="Top Languages" loading="lazy">
+          </div>
+        </div>
+        <div class="github-link">
+          <a href="https://github.com/LightHostingFree" target="_blank" class="btn btn-secondary">
+            <span>💻</span> View Full Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      
+      <div class="projects-category">
+        <h3 class="category-title">Current Project</h3>
+        <div class="projects-grid">
+          <div class="project-card active">
+            <div class="project-header">
+              <h4>Free Subdomain Registry</h4>
+              <span class="project-status active">Active</span>
             </div>
+            <p class="project-description">
+              A free subdomain registry service allowing users to register and manage their own subdomains. 
+              Built with modern web technologies for scalability and user experience.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Web Service</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/is-cool-me/register" target="_blank" class="btn btn-small">
+                View on GitHub
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Mayank's Portfolio. All rights reserved.</p>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      </div>
+
+      <div class="projects-category">
+        <h3 class="category-title">Previous Projects</h3>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <h4>Mayank Servers</h4>
+              <span class="project-status discontinued">Discontinued</span>
+            </div>
+            <p class="project-description">
+              A comprehensive hosting service platform providing various server solutions and web hosting services.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Web Hosting</span>
+              <span class="tag">Server Management</span>
+            </div>
+            <div class="project-links">
+              <span class="project-domain">mayankservers.in</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h4>Light Hosting</h4>
+              <span class="project-status discontinued">Discontinued</span>
+            </div>
+            <p class="project-description">
+              A lightweight hosting solution focused on providing fast and reliable web hosting services.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Web Hosting</span>
+              <span class="tag">Performance</span>
+            </div>
+            <div class="project-links">
+              <span class="project-domain">lighthosting.eu.org</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h4>Aorzo Hosting</h4>
+              <span class="project-status discontinued">Discontinued</span>
+            </div>
+            <p class="project-description">
+              A professional hosting platform offering various web hosting and domain services.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Web Hosting</span>
+              <span class="tag">Domain Services</span>
+            </div>
+            <div class="project-links">
+              <span class="project-domain">aorzohosting.tech</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <h4>iShort URL Shortener</h4>
+              <span class="project-status discontinued">Discontinued</span>
+            </div>
+            <p class="project-description">
+              A URL shortening service that provided quick and easy link shortening capabilities for users.
+            </p>
+            <div class="project-tags">
+              <span class="tag">URL Shortener</span>
+              <span class="tag">Web Service</span>
+            </div>
+            <div class="project-links">
+              <span class="project-domain">ishort.tech</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interests Section -->
+  <section id="interests" class="interests">
+    <div class="container">
+      <h2 class="section-title">Personal Interests</h2>
+      <div class="interests-content">
+        <div class="interest-category">
+          <h3>Anime Enthusiast</h3>
+          <p>I'm passionate about anime and have watched numerous series. Here are some of my favorites:</p>
+          <div class="anime-grid">
+            <div class="anime-item">Naruto</div>
+            <div class="anime-item">Naruto Shippuden</div>
+            <div class="anime-item">Boruto</div>
+            <div class="anime-item">Demon Slayer</div>
+            <div class="anime-item">Jujutsu Kaisen</div>
+            <div class="anime-item">Solo Leveling</div>
+            <div class="anime-item">Dandadan</div>
+            <div class="anime-item">Hell's Paradise</div>
+            <div class="anime-item">The Eminence in Shadow</div>
+            <div class="anime-item">Wise Man's Grandchild</div>
+            <div class="anime-item">Aristocrat's Otherworldly Adventure</div>
+            <div class="anime-item">Mushoku Tensei</div>
+            <div class="anime-item">My Instant Death Ability is So Overpowered</div>
+            <div class="anime-item">The Misfit of Demon King Academy</div>
+            <div class="anime-item">My Dress-Up Darling</div>
+            <div class="anime-item">Rent-a-Girlfriend</div>
+            <div class="anime-item">Please Put Them On, Takamine-san</div>
+            <div class="anime-item">Alya Sometimes Hides Her Feelings in Russian</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>
+            I'm always open to discussing new opportunities, interesting projects, 
+            or just having a chat about technology and anime!
+          </p>
+          <div class="contact-links">
+            <a href="mailto:contact@mayankbaswal.bio" class="contact-link">
+              <span class="contact-icon">📧</span>
+              contact@mayank.is-a.dev
+            </a>
+            <a href="https://github.com/is-cool-me" target="_blank" class="contact-link">
+              <span class="contact-icon">💻</span>
+              GitHub
+            </a>
+            <a href="https://discord.com/users/mayank.dev" target="_blank" class="contact-link">
+              <span class="contact-icon">💬</span>
+              <span>Discord: mayank.dev</span>
+              <div class="discord-status" id="discord-status">
+                <span class="status-indicator" id="status-indicator"></span>
+                <span class="status-text" id="status-text">Loading...</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form action="https://formspree.io/f/mqalkbdv" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="New message from mayankbaswal.bio">
+            <input type="hidden" name="_next" value="https://mayank.is-a.dev/#contact">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2024 Mayank Baswal. All rights reserved.</p>
+        <p>Built with passion for development and anime ❤️</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="discord-status.js"></script>
 </body>
-                          </html>
-  
+</html>
