@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mayank.is-a.dev/sitemap.xml
+
