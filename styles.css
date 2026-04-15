@@ -192,7 +192,7 @@ html, body {
 }
 
 .nav-menu.mobile-menu.active {
-  height: 320px;
+  height: auto;
   padding: 80px 0 40px 0;
   display: flex;
 }
@@ -203,45 +203,43 @@ html, body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.5rem;
   margin: 0.2rem 0;
-  border-radius: 12px;
-  background: rgba(139, 92, 246, 0.08);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  border: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(20px);
   position: relative;
-  overflow: hidden;
-  min-width: 200px;
+  overflow: visible;
   text-align: center;
   display: block;
   visibility: visible;
 }
 
 /* Staggered Animation for Menu Items */
-.nav-menu.mobile-menu.active .nav-link:nth-child(1) {
+.nav-menu.mobile-menu.active li:nth-child(1) .nav-link {
   animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
 }
 
-.nav-menu.mobile-menu.active .nav-link:nth-child(2) {
+.nav-menu.mobile-menu.active li:nth-child(2) .nav-link {
   animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.15s forwards;
 }
 
-.nav-menu.mobile-menu.active .nav-link:nth-child(3) {
+.nav-menu.mobile-menu.active li:nth-child(3) .nav-link {
   animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
 }
 
-.nav-menu.mobile-menu.active .nav-link:nth-child(4) {
+.nav-menu.mobile-menu.active li:nth-child(4) .nav-link {
   animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.25s forwards;
 }
 
-.nav-menu.mobile-menu.active .nav-link:nth-child(5) {
+.nav-menu.mobile-menu.active li:nth-child(5) .nav-link {
   animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
 }
 
-.nav-menu.mobile-menu.active .nav-link:nth-child(6) {
+.nav-menu.mobile-menu.active li:nth-child(6) .nav-link {
   animation: slideInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.35s forwards;
 }
 
@@ -254,31 +252,29 @@ html, body {
 
 /* Shimmer Effect for Mobile Menu Links */
 .nav-menu.mobile-menu .nav-link::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
-  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-menu.mobile-menu .nav-link:hover::before {
-  left: 100%;
+  display: none;
 }
 
 .nav-menu.mobile-menu .nav-link:hover {
   color: #8b5cf6;
-  background: rgba(139, 92, 246, 0.15);
-  transform: translateX(5px) scale(1.04);
-  text-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
-  border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.25);
+  background: transparent;
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
 .nav-menu.mobile-menu .nav-link::after {
-  display: none;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-menu.mobile-menu .nav-link:hover::after {
+  width: 100%;
 }
 
 /* Body scroll lock */

@@ -517,10 +517,12 @@ activeNavStyle.textContent = `
   
   /* Enhanced mobile menu active states */
   .nav-menu.mobile-menu .nav-link.active {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(139, 92, 246, 0.5);
+    color: #8b5cf6;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  }
+  
+  .nav-menu.mobile-menu .nav-link.active::after {
+    width: 100%;
   }
 `;
 document.head.appendChild(activeNavStyle);
