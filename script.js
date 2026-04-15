@@ -465,7 +465,7 @@ window.addEventListener('load', () => {
     }
   }
 
-  // Normalise whitespace while keeping the trailing space before the name
+  // Normalize whitespace while keeping the trailing space before the name
   const cleanPrefix = fullPrefix.replace(/\s+/g, ' ').trimStart();
 
   // Clear prefix text nodes and hide the gradient span
