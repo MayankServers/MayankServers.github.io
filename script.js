@@ -519,6 +519,9 @@ activeNavStyle.textContent = `
   .nav-menu.mobile-menu .nav-link.active {
     color: #8b5cf6;
     text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    background: rgba(139, 92, 246, 0.08);
+    border-left-color: #8b5cf6;
+    transform: translateX(4px);
   }
   
   .nav-menu.mobile-menu .nav-link.active::after {

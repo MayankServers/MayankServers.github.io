@@ -110,7 +110,7 @@ html, body {
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 2px;
   left: 0;
   width: 0;
   height: 2px;
@@ -197,25 +197,63 @@ html, body {
   display: flex;
 }
 
+/* Branded header shown at the top of the open mobile menu */
+.nav-menu.mobile-menu.active::before {
+  content: '{ MB }' / '';
+  display: block;
+  font-family: monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  letter-spacing: 6px;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeInBrand 0.4s ease 0.05s forwards;
+  order: -1;
+}
+
+/* Tagline shown at the bottom of the open mobile menu */
+.nav-menu.mobile-menu.active::after {
+  content: '< Full Stack Developer />' / '';
+  display: block;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: rgba(139, 92, 246, 0.5);
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 1.5rem;
+  opacity: 0;
+  animation: fadeInBrand 0.4s ease 0.4s forwards;
+}
+
+@keyframes fadeInBrand {
+  to { opacity: 1; }
+}
+
 .nav-menu.mobile-menu .nav-link {
   color: #e2e8f0;
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 2rem;
   margin: 0.2rem 0;
   border-radius: 8px;
   background: transparent;
   border: none;
+  border-left: 3px solid transparent;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(20px);
   position: relative;
   overflow: visible;
-  text-align: center;
+  text-align: left;
   display: block;
   visibility: visible;
+  width: 200px;
+  max-width: 90vw;
 }
 
 /* Staggered Animation for Menu Items */
@@ -252,14 +290,25 @@ html, body {
 
 /* Shimmer Effect for Mobile Menu Links */
 .nav-menu.mobile-menu .nav-link::before {
-  display: none;
+  display: inline-block;
+  content: attr(data-icon);
+  margin-right: 0.6rem;
+  font-size: 1.1rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+}
+
+.nav-menu.mobile-menu .nav-link:hover::before,
+.nav-menu.mobile-menu .nav-link.active::before {
+  transform: scale(1.3);
 }
 
 .nav-menu.mobile-menu .nav-link:hover {
   color: #8b5cf6;
-  background: transparent;
-  transform: translateY(-2px);
+  background: rgba(139, 92, 246, 0.08);
+  transform: translateX(4px);
   text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  border-left-color: #8b5cf6;
 }
 
 .nav-menu.mobile-menu .nav-link::after {
